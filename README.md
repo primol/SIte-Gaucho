@@ -16,7 +16,7 @@ python3 -m http.server 8000
 
 | Seção | Destaques |
 |---|---|
-| **Intro** | Animação de um bife sendo cortado por uma faca; o logo surge por trás do corte, com brasas e fumaça. Botão "Pular intro" (ou tecla Esc). Quem usa "reduzir movimento" no sistema vê uma versão curta. |
+| **Intro 3D** | Cena em WebGL (Three.js): bife na pedra com fogo ao fundo, uma faca corta a carne com faíscas, as metades se abrem mostrando o interior, o logo sobe girando de dentro do corte com raios de luz e a cena "queima" revelando o site. Botão "Pular intro" (ou Esc). Sem WebGL ou com "reduzir movimento", aparece uma versão simples com o logo. |
 | **Hero** | Foto da brasa com zoom lento, fumaça e brasas animadas em canvas, nota do Google e horário. |
 | **A Casa** | Texto "Quem somos", +20 tipos de cortes e as 4 etapas do atendimento. |
 | **Qualidade** | Foco na qualidade da carne gaúcha: seleção, tradição, preparo na hora e fartura. |
@@ -36,6 +36,22 @@ python3 -m http.server 8000
 - **Fotos:** ficam em `assets/img/` (formato WebP). Para trocar, mantenha o mesmo nome do arquivo ou ajuste o `src` no HTML.
 - **WhatsApp:** número `551125344654` nos links `wa.me` (busque por `wa.me` no `index.html`).
 
+## Intro 3D (código-fonte)
+
+A cena fica em `src/intro3d/` e é empacotada em um único arquivo, `assets/js/intro3d.js`, que já vai pronto no repositório
+(o site continua funcionando sem build). Para alterar a cena:
+
+```bash
+npm install
+npm run build      # gera assets/js/intro3d.js (minificado)
+npm run dev        # recompila a cada alteração
+```
+
+- `main.js`: linha do tempo (`T`), movimentos de câmera (`CAM`), luzes (`L`) e transição de queima.
+- `steak.js`: geometria e materiais do bife (crosta, marcas da grelha, gordura e interior).
+- `knife.js`, `fx.js` (fogo, faíscas, fumaça, suco, raios) e `logo.js` (emblema 3D).
+- Abra `index.html?intro=debug` para pausar a intro e renderizar qualquer instante com `__gfIntro.renderAt(segundos)` no console.
+
 ## Publicação
 
 Funciona em qualquer hospedagem de site estático: a hospedagem atual (enviando os arquivos por FTP para a pasta pública),
@@ -50,8 +66,11 @@ Netlify, Vercel, Cloudflare Pages ou GitHub Pages. Publique o conteúdo desta pa
 index.html
 assets/
   css/style.css      estilos, cores e animações
-  js/main.js         intro, brasas/fumaça, menu, abas, ponto da carne, galeria
+  js/main.js         brasas/fumaça, menu, abas, ponto da carne, galeria e coordenação da intro
+  js/intro3d.js      intro 3D (gerado a partir de src/intro3d)
   js/reviews.js      depoimentos de clientes (editar aqui)
+src/intro3d/         código-fonte da intro 3D (Three.js)
+package.json         dependências e scripts de build da intro
   img/               logo, fotos e ícones
   cardapio-gaucho-figueiras.pdf
 ```

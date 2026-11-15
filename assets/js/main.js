@@ -182,7 +182,9 @@
   }
 
   /* =======================================================
-     INTRO: corte da carne e revelação do logo
+     INTRO: a cena 3D fica em assets/js/intro3d.js (módulo).
+     Aqui ficam a coordenação com o site e a versão simples
+     (sem WebGL, com "reduzir movimento" ou se o 3D não carregar).
      ======================================================= */
   const intro = $('#intro');
   let introExited = false;
@@ -203,12 +205,12 @@
   function exitIntro(fast) {
     if (introExited || !intro) return;
     introExited = true;
+    GFIntro.state = 'done';
     timers.forEach(clearTimeout);
     const dur = fast ? 550 : 950;
+    if (!intro.animate) { finishIntro(); markReady(); return; }
     const anim = intro.animate(
-      fast
-        ? [{ opacity: 1 }, { opacity: 0 }]
-        : [{ clipPath: 'inset(0 0 0% 0)' }, { clipPath: 'inset(0 0 100% 0)' }],
+      fast ? [{ opacity: 1 }, { opacity: 0 }] : [{ clipPath: 'inset(0 0 0% 0)' }, { clipPath: 'inset(0 0 100% 0)' }],
       { duration: dur, easing: 'cubic-bezier(.77,0,.18,1)', fill: 'forwards' }
     );
     setTimeout(markReady, fast ? 120 : 260);
@@ -216,101 +218,65 @@
     setTimeout(finishIntro, dur + 200);
   }
 
-  function runIntro() {
-    if (!intro || !intro.animate) { finishIntro(); markReady(); return; }
+  const GFIntro = window.GFIntro = {
+    state: 'waiting', // waiting → claimed (3D) | fallback → done
+    skip: null,
+    claim() {
+      if (this.state !== 'waiting') return false;
+      this.state = 'claimed';
+      clearTimeout(fallbackTimer);
+      return true;
+    },
+    fail() {
+      if (this.state === 'claimed') this.state = 'waiting';
+      runFallback();
+    },
+    reveal() {
+      if (intro) intro.classList.add('is-burning');
+      markReady();
+    },
+    done() {
+      this.state = 'done';
+      introExited = true;
+      finishIntro();
+      markReady();
+    }
+  };
 
-    const steak = $('.intro__steak', intro);
-    const knife = $('.knife', intro);
-    const line = $('.cutline', intro);
-    const halfA = $('.half--a', intro);
-    const halfB = $('.half--b', intro);
-    const faces = $$('.cutface', intro);
+  function runFallback() {
+    if (!intro || GFIntro.state !== 'waiting') return;
+    GFIntro.state = 'fallback';
+    intro.classList.add('is-fallback');
     const logo = $('.intro__logo', intro);
     const glow = $('.intro__glow', intro);
-    const tagline = $('.intro__tagline', intro);
-    const puffs = $$('.intro__puffs span', intro);
-    const wisps = $('.intro__wisps', intro);
-    const F = 'forwards';
-
-    $('.intro__skip', intro).addEventListener('click', () => exitIntro(true));
-    intro.addEventListener('click', (e) => { if (e.target === intro) exitIntro(true); });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') exitIntro(true); }, { once: true });
-
-    if (reduceMotion) {
-      steak.style.opacity = '0';
-      logo.animate([{ opacity: 0, transform: 'translate(-50%,-50%) scale(.9)' }, { opacity: 1, transform: 'translate(-50%,-50%) scale(1)' }], { duration: 400, fill: F });
-      tagline.animate([{ opacity: 0 }, { opacity: 1, transform: 'none' }], { duration: 400, fill: F });
-      at(1300, () => exitIntro(true));
-      return;
-    }
-
-    // 1) bife entra em cena
-    steak.animate([
-      { opacity: 0, transform: 'translateY(30px) scale(.86) rotate(-4deg)' },
-      { opacity: 1, transform: 'none' }
-    ], { duration: 800, easing: 'cubic-bezier(.2,.9,.25,1.15)', fill: F });
-
-    // 2) faca desliza pelo corte (com leve vai-e-vem de serrar)
-    const kf = [];
-    const N = 28;
-    for (let i = 0; i <= N; i++) {
-      const p = i / N;
-      const x = -300 + 1000 * p;
-      const y = Math.sin(i * 1.6) * 3.5;
-      kf.push({ transform: `translate(${x}px, ${y}px)`, opacity: p < 0.07 ? p / 0.07 : p > 0.9 ? (1 - p) / 0.1 : 1, offset: p });
-    }
-    knife.animate(kf, { duration: 1300, delay: 650, easing: 'linear', fill: F });
-
-    // 3) linha do corte acompanha a ponta da faca
-    line.animate([{ strokeDashoffset: 1 }, { strokeDashoffset: 0 }], { duration: 680, delay: 1040, easing: 'linear', fill: F });
-    line.animate([{ strokeWidth: 3.2, opacity: 1 }, { strokeWidth: 7, opacity: 1 }, { strokeWidth: 2, opacity: 0 }], { duration: 700, delay: 1720, easing: 'ease-out', fill: F });
-
-    // 4) as metades se abrem e o logo surge por trás do corte
-    const nx = 0.937, ny = 0.352;
-    const open = 34, fly = 640;
-    const tA1 = `translate(${nx * open}px, ${ny * open}px) rotate(3deg)`;
-    const tB1 = `translate(${-nx * open}px, ${-ny * open}px) rotate(-3deg)`;
-    halfA.animate([{ transform: 'none' }, { transform: tA1 }], { duration: 650, delay: 1760, easing: 'cubic-bezier(.2,.9,.3,1)', fill: F });
-    halfB.animate([{ transform: 'none' }, { transform: tB1 }], { duration: 650, delay: 1760, easing: 'cubic-bezier(.2,.9,.3,1)', fill: F });
-    at(1760, () => steak.classList.add('is-cut'));
-    faces.forEach((f) => f.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 250, delay: 1760, fill: F }));
-    wisps.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 500, delay: 1760, fill: F });
-
-    glow.animate([
-      { opacity: 0, transform: 'translate(-50%,-50%) scale(.4)' },
-      { opacity: 1, transform: 'translate(-50%,-50%) scale(1.05)' },
-      { opacity: .75, transform: 'translate(-50%,-50%) scale(1)' }
-    ], { duration: 1400, delay: 1780, easing: 'ease-out', fill: F });
-    logo.animate([
-      { opacity: 0, transform: 'translate(-50%,-50%) scale(.7)', filter: 'drop-shadow(0 0 0 rgba(255,120,40,0)) brightness(1.6)' },
-      { opacity: 1, transform: 'translate(-50%,-50%) scale(.9)', filter: 'drop-shadow(0 0 30px rgba(255,120,40,.7)) brightness(1.2)', offset: .45 },
-      { opacity: 1, transform: 'translate(-50%,-50%) scale(1.04)', filter: 'drop-shadow(0 0 22px rgba(255,120,40,.55)) brightness(1)', offset: .8 },
-      { opacity: 1, transform: 'translate(-50%,-50%) scale(1)', filter: 'drop-shadow(0 0 22px rgba(255,120,40,.55)) brightness(1)' }
-    ], { duration: 1500, delay: 1800, easing: 'cubic-bezier(.2,.8,.2,1)', fill: F });
-
-    at(1780, () => {
+    if (logo && logo.animate && !reduceMotion) {
+      glow.animate([
+        { opacity: 0, transform: 'translate(-50%,-50%) scale(.4)' },
+        { opacity: 1, transform: 'translate(-50%,-50%) scale(1.05)' },
+        { opacity: .8, transform: 'translate(-50%,-50%) scale(1)' }
+      ], { duration: 1400, easing: 'ease-out', fill: 'forwards' });
+      logo.animate([
+        { opacity: 0, transform: 'scale(.7)', filter: 'drop-shadow(0 0 0 rgba(255,120,40,0)) brightness(1.6)' },
+        { opacity: 1, transform: 'scale(1.04)', filter: 'drop-shadow(0 0 30px rgba(255,120,40,.7)) brightness(1.15)', offset: .6 },
+        { opacity: 1, transform: 'scale(1)', filter: 'drop-shadow(0 0 22px rgba(255,120,40,.55)) brightness(1)' }
+      ], { duration: 1300, easing: 'cubic-bezier(.2,.8,.2,1)', fill: 'forwards' });
       const e = fx['embers-intro'];
-      if (e) e.burst(e.w / 2, e.h / 2, 70);
-    });
-    puffs.forEach((p, i) => {
-      const a = (i / puffs.length) * Math.PI * 2 + 0.4;
-      const dx = Math.cos(a) * 120, dy = Math.sin(a) * 70 - 60;
-      p.animate([
-        { opacity: 0, transform: 'translate(0,0) scale(.4)' },
-        { opacity: .75, transform: `translate(${dx * 0.4}px, ${dy * 0.4}px) scale(1.2)`, offset: .25 },
-        { opacity: 0, transform: `translate(${dx}px, ${dy - 60}px) scale(2.4)` }
-      ], { duration: 1800, delay: 1790 + i * 60, easing: 'ease-out', fill: F });
-    });
+      at(350, () => { if (e) e.burst(e.w / 2, e.h / 2, 60); });
+    }
+    at(reduceMotion ? 900 : 2700, () => exitIntro(false));
+  }
 
-    // 5) metades saem de cena
-    halfA.animate([{ transform: tA1, opacity: 1 }, { transform: `translate(${nx * fly}px, ${ny * fly}px) rotate(20deg)`, opacity: 0 }], { duration: 950, delay: 2480, easing: 'cubic-bezier(.6,0,.85,.4)', fill: F });
-    halfB.animate([{ transform: tB1, opacity: 1 }, { transform: `translate(${-nx * fly}px, ${-ny * fly}px) rotate(-20deg)`, opacity: 0 }], { duration: 950, delay: 2480, easing: 'cubic-bezier(.6,0,.85,.4)', fill: F });
-
-    // 6) slogan
-    tagline.animate([{ opacity: 0, transform: 'translateY(12px)' }, { opacity: 1, transform: 'none' }], { duration: 800, delay: 2750, easing: 'ease-out', fill: F });
-
-    // 7) abre a cortina para o site
-    at(3950, () => exitIntro(false));
+  const fallbackTimer = setTimeout(runFallback, 6500);
+  if (intro) {
+    const skipIntro = () => {
+      if (GFIntro.state === 'claimed' && GFIntro.skip) GFIntro.skip();
+      else exitIntro(true);
+    };
+    $('.intro__skip', intro).addEventListener('click', skipIntro);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && GFIntro.state !== 'done') skipIntro(); });
+    if (reduceMotion || !('noModule' in HTMLScriptElement.prototype)) runFallback();
+  } else {
+    markReady();
   }
 
   /* =======================================================
@@ -579,5 +545,4 @@
   const y = $('#year');
   if (y) y.textContent = new Date().getFullYear();
 
-  runIntro();
 })();
