@@ -1,0 +1,814 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gaúcho Figueiras Grill · Excelência em churrasco em Santo André (ABC)</title>
+  <meta name="description" content="Churrascaria Gaúcho Figueiras Grill: os cortes mais nobres do ABC. Black Angus prime, assados na brasa e no bafo, preparados na hora. Rua das Figueiras, 1408, Santo André. Todos os dias das 11h às 23h.">
+  <meta name="theme-color" content="#0e0a08">
+  <link rel="canonical" href="https://www.gauchofigueiras.com.br/">
+
+  <meta property="og:type" content="restaurant">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Gaúcho Figueiras Grill · Excelência em churrasco">
+  <meta property="og:description" content="Os cortes mais nobres do ABC: Black Angus prime, assados na brasa e no bafo. Santo André, todos os dias das 11h às 23h.">
+  <meta property="og:image" content="https://www.gauchofigueiras.com.br/assets/img/hero-brasa.webp">
+  <meta property="og:url" content="https://www.gauchofigueiras.com.br/">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/icon-32.png">
+  <link rel="apple-touch-icon" href="assets/img/icon-180.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/img/logo.webp">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Gaúcho Figueiras Grill",
+    "alternateName": "Gaucho Grill Figueiras",
+    "servesCuisine": ["Churrasco", "Steakhouse", "Culinária gaúcha"],
+    "priceRange": "$$$",
+    "telephone": "+55 11 2534-4654",
+    "email": "contato@gauchofigueiras.com.br",
+    "url": "https://www.gauchofigueiras.com.br/",
+    "image": "https://www.gauchofigueiras.com.br/assets/img/hero-brasa.webp",
+    "logo": "https://www.gauchofigueiras.com.br/assets/img/logo.png",
+    "menu": "https://www.gauchofigueiras.com.br/assets/cardapio-gaucho-figueiras.pdf",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua das Figueiras, 1408 (esquina com Alameda São Caetano)",
+      "addressLocality": "Santo André",
+      "addressRegion": "SP",
+      "addressCountry": "BR"
+    },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "11:00",
+      "closes": "23:00"
+    }],
+    "sameAs": [
+      "https://www.instagram.com/gauchofigueiras",
+      "https://www.facebook.com/gauchofigueiras"
+    ]
+  }
+  </script>
+</head>
+<body class="is-intro">
+
+  <!-- ============ INTRO: carne sendo cortada, logo surge por trás do corte ============ -->
+  <div class="intro" id="intro" aria-hidden="true">
+    <canvas class="fx-canvas intro__embers" data-embers="intro"></canvas>
+    <div class="intro__stage">
+      <div class="intro__glow"></div>
+      <img class="intro__logo" src="assets/img/logo.webp" alt="" width="640" height="504">
+      <svg class="intro__steak" viewBox="0 0 600 440" focusable="false">
+        <defs>
+          <path id="steakShape" d="M78 214 C66 132 146 62 268 54 C344 49 404 60 456 84 C514 111 548 158 544 218 C540 292 482 352 382 368 C300 381 214 378 152 348 C104 325 84 276 78 214 Z"/>
+          <path id="meatShape" d="M118 228 C110 162 170 106 274 96 C346 90 406 100 452 122 C510 150 542 186 540 222 C537 292 480 348 382 364 C302 376 216 372 156 344 C126 328 120 284 118 228 Z"/>
+          <clipPath id="clipSteak"><use href="#steakShape"/></clipPath>
+          <clipPath id="clipMeat"><use href="#meatShape"/></clipPath>
+          <clipPath id="clipA"><polygon points="392,-24 900,-200 900,700 208,464"/></clipPath>
+          <clipPath id="clipB"><polygon points="392,-24 -900,-200 -900,700 208,464"/></clipPath>
+
+          <radialGradient id="gMeat" cx="46%" cy="42%" r="62%">
+            <stop offset="0" stop-color="#a5532a"/>
+            <stop offset=".45" stop-color="#7a3416"/>
+            <stop offset=".8" stop-color="#55210d"/>
+            <stop offset="1" stop-color="#3a1508"/>
+          </radialGradient>
+          <linearGradient id="gFat" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#f6dca6"/>
+            <stop offset=".45" stop-color="#e0aa62"/>
+            <stop offset="1" stop-color="#9c5826"/>
+          </linearGradient>
+          <linearGradient id="gSide" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#4a1c0b"/>
+            <stop offset="1" stop-color="#1e0904"/>
+          </linearGradient>
+          <linearGradient id="gCut" gradientUnits="userSpaceOnUse" x1="392" y1="-24" x2="208" y2="464">
+            <stop offset=".15" stop-color="#5a200e"/>
+            <stop offset=".22" stop-color="#b8393a"/>
+            <stop offset=".49" stop-color="#f19189"/>
+            <stop offset=".76" stop-color="#b8393a"/>
+            <stop offset=".84" stop-color="#5a200e"/>
+          </linearGradient>
+          <linearGradient id="gBlade" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#fbfcfd"/>
+            <stop offset=".55" stop-color="#a8b0b9"/>
+            <stop offset="1" stop-color="#e6eaee"/>
+          </linearGradient>
+          <linearGradient id="gHandle" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#4b2c1c"/>
+            <stop offset="1" stop-color="#1d100a"/>
+          </linearGradient>
+
+          <filter id="fMarble" x="0" y="0" width="100%" height="100%">
+            <feTurbulence type="turbulence" baseFrequency="0.012 0.03" numOctaves="2" seed="11"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 .95  0 0 0 0 .74  0 0 0 0 .54  -16 0 0 0 1.5"/>
+            <feGaussianBlur stdDeviation=".5"/>
+          </filter>
+          <filter id="fCrust" x="0" y="0" width="100%" height="100%">
+            <feTurbulence type="fractalNoise" baseFrequency=".75" numOctaves="2" seed="4"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 .09  0 0 0 0 .03  0 0 0 0 .01  0 0 0 1.6 -.55"/>
+          </filter>
+          <filter id="fSoft"><feGaussianBlur stdDeviation="2.2"/></filter>
+          <filter id="fBlur8"><feGaussianBlur stdDeviation="8"/></filter>
+          <filter id="fGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="3" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+
+          <g id="steak">
+            <use href="#steakShape" transform="translate(0 18)" fill="url(#gSide)"/>
+            <use href="#steakShape" fill="url(#gFat)"/>
+            <use href="#meatShape" fill="url(#gMeat)"/>
+            <g clip-path="url(#clipMeat)">
+              <rect x="80" y="60" width="460" height="320" filter="url(#fMarble)" opacity=".3"/>
+            </g>
+            <g clip-path="url(#clipSteak)">
+              <rect x="60" y="40" width="500" height="360" filter="url(#fCrust)" opacity=".55"/>
+              <g stroke="#160602" stroke-width="15" stroke-linecap="round" opacity=".72" filter="url(#fSoft)">
+                <line x1="70" y1="120" x2="250" y2="400"/>
+                <line x1="150" y1="70" x2="350" y2="390"/>
+                <line x1="240" y1="50" x2="440" y2="380"/>
+                <line x1="330" y1="50" x2="530" y2="370"/>
+                <line x1="420" y1="60" x2="590" y2="330"/>
+              </g>
+              <ellipse cx="262" cy="150" rx="110" ry="34" fill="#fff" opacity=".07" filter="url(#fBlur8)"/>
+              <ellipse cx="380" cy="270" rx="70" ry="20" fill="#ffb37a" opacity=".08" filter="url(#fBlur8)"/>
+            </g>
+            <use href="#steakShape" fill="none" stroke="#2a0c04" stroke-width="5" opacity=".55"/>
+            <g fill="none" stroke="#2a3d1e" stroke-width="3" stroke-linecap="round"><path d="M176 302 C236 276 312 236 404 204"/></g>
+            <g fill="#4f6e33" stroke="#2a3d1e" stroke-width=".6"><ellipse cx="193" cy="285.5" rx="11" ry="2.6" transform="rotate(-65.1 193 285.5)"/><ellipse cx="213.1" cy="288" rx="11" ry="2.6" transform="rotate(18.9 213.1 288)"/><ellipse cx="223.6" cy="268.5" rx="11" ry="2.6" transform="rotate(-65.1 223.6 268.5)"/><ellipse cx="243.7" cy="271.4" rx="11" ry="2.6" transform="rotate(18.9 243.7 271.4)"/><ellipse cx="254.2" cy="252.4" rx="11" ry="2.6" transform="rotate(-65.1 254.2 252.4)"/><ellipse cx="274.3" cy="256.1" rx="11" ry="2.6" transform="rotate(18.9 274.3 256.1)"/><ellipse cx="284.8" cy="238" rx="11" ry="2.6" transform="rotate(-65.1 284.8 238)"/><ellipse cx="304.9" cy="242.5" rx="11" ry="2.6" transform="rotate(18.9 304.9 242.5)"/><ellipse cx="315.4" cy="225.2" rx="11" ry="2.6" transform="rotate(-65.1 315.4 225.2)"/><ellipse cx="335.5" cy="230.6" rx="11" ry="2.6" transform="rotate(18.9 335.5 230.6)"/><ellipse cx="346" cy="214.3" rx="11" ry="2.6" transform="rotate(-65.1 346 214.3)"/><ellipse cx="366.1" cy="220.4" rx="11" ry="2.6" transform="rotate(18.9 366.1 220.4)"/><ellipse cx="376.6" cy="204.6" rx="11" ry="2.6" transform="rotate(-65.1 376.6 204.6)"/><ellipse cx="396.7" cy="211.2" rx="11" ry="2.6" transform="rotate(18.9 396.7 211.2)"/></g>
+            <g fill="#fff8ec" opacity=".9"><rect x="177.5" y="148" width="5" height="4" rx="1.2" transform="rotate(20 180 150)"/><rect x="229.5" y="124" width="5" height="4" rx="1.2" transform="rotate(-15 232 126)"/><rect x="297.5" y="116" width="5" height="4" rx="1.2" transform="rotate(40 300 118)"/><rect x="353.5" y="138" width="5" height="4" rx="1.2" transform="rotate(10 356 140)"/><rect x="409.5" y="166" width="5" height="4" rx="1.2" transform="rotate(-30 412 168)"/><rect x="259.5" y="190" width="5" height="4" rx="1.2" transform="rotate(60 262 192)"/><rect x="331.5" y="204" width="5" height="4" rx="1.2" transform="rotate(15 334 206)"/><rect x="391.5" y="232" width="5" height="4" rx="1.2" transform="rotate(-45 394 234)"/><rect x="203.5" y="240" width="5" height="4" rx="1.2" transform="rotate(30 206 242)"/><rect x="269.5" y="262" width="5" height="4" rx="1.2" transform="rotate(-10 272 264)"/><rect x="349.5" y="280" width="5" height="4" rx="1.2" transform="rotate(50 352 282)"/><rect x="429.5" y="270" width="5" height="4" rx="1.2" transform="rotate(5 432 272)"/><rect x="239.5" y="310" width="5" height="4" rx="1.2" transform="rotate(-35 242 312)"/><rect x="309.5" y="324" width="5" height="4" rx="1.2" transform="rotate(25 312 326)"/><rect x="379.5" y="312" width="5" height="4" rx="1.2" transform="rotate(-20 382 314)"/><rect x="165.5" y="202" width="5" height="4" rx="1.2" transform="rotate(45 168 204)"/><rect x="455.5" y="210" width="5" height="4" rx="1.2" transform="rotate(-12 458 212)"/><rect x="289.5" y="158" width="5" height="4" rx="1.2" transform="rotate(70 292 160)"/><rect x="217.5" y="188" width="5" height="4" rx="1.2" transform="rotate(-60 220 190)"/><rect x="445.5" y="298" width="5" height="4" rx="1.2" transform="rotate(33 448 300)"/></g>
+          </g>
+        </defs>
+
+        <!-- bife inteiro (até o corte) -->
+        <use href="#steak" class="whole"/>
+        <!-- metade A (direita) -->
+        <g class="half half--a">
+          <g clip-path="url(#clipA)">
+            <use href="#steak"/>
+            <g clip-path="url(#clipSteak)"><polygon class="cutface" points="392,-24 208,464 221.1,468.9 405.1,-19.1" fill="url(#gCut)"/></g>
+          </g>
+        </g>
+        <!-- metade B (esquerda) -->
+        <g class="half half--b">
+          <g clip-path="url(#clipB)">
+            <use href="#steak"/>
+            <g clip-path="url(#clipSteak)"><polygon class="cutface" points="392,-24 208,464 194.9,459.1 378.9,-28.9" fill="url(#gCut)"/></g>
+          </g>
+        </g>
+
+        <!-- linha do corte -->
+        <g clip-path="url(#clipSteak)">
+          <line class="cutline" x1="392" y1="-24" x2="208" y2="464" pathLength="1" stroke="#ffe2b0" stroke-width="3.2" stroke-linecap="round" filter="url(#fGlow)"/>
+        </g>
+
+        <!-- faca -->
+        <g transform="translate(392 -24) rotate(110.7)">
+          <g class="knife">
+            <path d="M-352 -19 Q-356 -6 -352 8 L-246 8 L-246 -19 Z" fill="url(#gHandle)"/>
+            <circle cx="-325" cy="-5.5" r="3.2" fill="#d4d9de"/>
+            <circle cx="-296" cy="-5.5" r="3.2" fill="#d4d9de"/>
+            <circle cx="-267" cy="-5.5" r="3.2" fill="#d4d9de"/>
+            <rect x="-248" y="-27" width="16" height="37" rx="3" fill="#7f8891"/>
+            <path d="M-232 -26 L-72 -26 Q-18 -22 2 3 Q-30 9 -72 9 L-232 9 Z" fill="url(#gBlade)" stroke="#8a929b" stroke-width=".8"/>
+            <path d="M-228 7.2 L-72 7.2 Q-30 7 0 2.6" fill="none" stroke="#fff" stroke-width="1.4" opacity=".85"/>
+          </g>
+        </g>
+      </svg>
+      <div class="intro__wisps"><span></span><span></span><span></span><span></span></div>
+      <div class="intro__puffs"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    </div>
+    <p class="intro__tagline"><span>Excelência em churrasco</span></p>
+    <button class="intro__skip" type="button">Pular intro <span aria-hidden="true">→</span></button>
+  </div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="header" id="topo">
+    <div class="header__inner">
+      <a href="#inicio" class="header__brand" aria-label="Gaúcho Figueiras Grill, voltar ao início">
+        <img src="assets/img/logo.webp" alt="Gaúcho Figueiras Grill" width="640" height="504">
+      </a>
+      <nav class="nav" id="nav" aria-label="Menu principal">
+        <a href="#casa">A Casa</a>
+        <a href="#qualidade">Qualidade</a>
+        <a href="#cortes">Cortes</a>
+        <a href="#cardapio">Cardápio</a>
+        <a href="#avaliacoes">Avaliações</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#contato">Contato</a>
+        <a class="btn btn--fire nav__cta" href="https://wa.me/551125344654?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20fazer%20uma%20reserva." target="_blank" rel="noopener">Reservar</a>
+      </nav>
+      <button class="burger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="inicio">
+      <div class="hero__bg" style="background-image:url('assets/img/hero-brasa.webp')"></div>
+      <div class="hero__shade"></div>
+      <canvas class="fx-canvas hero__smoke" data-smoke="hero"></canvas>
+      <canvas class="fx-canvas hero__embers" data-embers="hero"></canvas>
+      <div class="hero__content container">
+        <p class="kicker hero__in" style="--d:0"><span class="flame" aria-hidden="true"></span> Santo André · ABC Paulista</p>
+        <h1 class="hero__title hero__in" style="--d:1">O melhor do ABC em <em>carnes premium</em></h1>
+        <p class="hero__lead hero__in" style="--d:2">Cortes nobres Black Angus, assados na brasa e no bafo, preparados na hora por quem sabe fazer churrasco. Ambiente familiar e acolhedor: sinta-se na serra gaúcha.</p>
+        <div class="hero__ctas hero__in" style="--d:3">
+          <a class="btn btn--fire btn--lg" href="#cortes">Conheça nossos cortes</a>
+          <a class="btn btn--ghost btn--lg" href="https://wa.me/551125344654?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20fazer%20uma%20reserva." target="_blank" rel="noopener">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+            Reserve pelo WhatsApp
+          </a>
+        </div>
+        <ul class="hero__facts hero__in" style="--d:4">
+          <li><span class="stars" style="--rate:4.6" aria-hidden="true"></span><strong>4,6</strong> no Google · +1.100 avaliações</li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16Zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7Z"/></svg>Todos os dias, 11h às 23h</li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>Rua das Figueiras, 1408</li>
+        </ul>
+      </div>
+      <a class="hero__scroll" href="#casa" aria-label="Rolar para conhecer a casa"><span></span></a>
+    </section>
+
+    <!-- ============ FAIXA ============ -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track">
+        <span>Picanha Prime</span><i></i><span>Bife Ancho Black Angus</span><i></i><span>Chorizo Argentino</span><i></i><span>Costela no Bafo</span><i></i><span>Carré de Cordeiro</span><i></i><span>Entranha</span><i></i><span>Bife de Tira</span><i></i><span>Parrilhada</span><i></i>
+        <span>Picanha Prime</span><i></i><span>Bife Ancho Black Angus</span><i></i><span>Chorizo Argentino</span><i></i><span>Costela no Bafo</span><i></i><span>Carré de Cordeiro</span><i></i><span>Entranha</span><i></i><span>Bife de Tira</span><i></i><span>Parrilhada</span><i></i>
+      </div>
+    </div>
+
+    <!-- ============ A CASA ============ -->
+    <section class="section casa" id="casa">
+      <div class="container casa__grid">
+        <div class="casa__media" data-reveal="left">
+          <figure class="casa__img casa__img--main" data-parallax="-0.06">
+            <img src="assets/img/picanha-fatiada.webp" alt="Picanha fatiada servida na mesa do Gaúcho Figueiras" loading="lazy" width="800" height="1067">
+          </figure>
+          <figure class="casa__img casa__img--sub" data-parallax="0.08">
+            <img src="assets/img/bife-ancho-cru.webp" alt="Bifes ancho crus com marmoreio aparente" loading="lazy" width="800" height="800">
+          </figure>
+          <div class="casa__badge">
+            <strong data-count="20" data-prefix="+">+20</strong>
+            <span>tipos de cortes</span>
+          </div>
+        </div>
+        <div class="casa__text">
+          <p class="kicker" data-reveal><span class="flame" aria-hidden="true"></span> Quem somos</p>
+          <h2 class="title" data-reveal>Sinta-se na <em>serra gaúcha</em>, aqui no ABC</h2>
+          <p data-reveal>No Gaúcho Figueiras Grill a regra é simples: <strong>só trabalhamos com cortes premium</strong>, com qualidade e certificação garantida. Todos os nossos pratos são selecionados por quem sabe fazer churrasco.</p>
+          <p data-reveal>Aqui você come a melhor carne da região e ainda se sente em casa, num ambiente familiar e agradável, com o calor e a hospitalidade do Sul.</p>
+          <ul class="casa__stats" data-reveal>
+            <li><strong>Black Angus</strong><span>linha de cortes prime</span></li>
+            <li><strong>Na brasa</strong><span>e no bafo, à moda gaúcha</span></li>
+            <li><strong>7 dias</strong><span>por semana, das 11h às 23h</span></li>
+          </ul>
+          <ol class="steps" data-reveal>
+            <li><b>1</b><div><h3>Escolha seu prato</h3><p>Preparamos na hora: tudo fresquinho e com a qualidade que você merece.</p></div></li>
+            <li><b>2</b><div><h3>Hora das entradinhas</h3><p>Nosso garçom serve algumas entradinhas para você ir se ambientando.</p></div></li>
+            <li><b>3</b><div><h3>Acompanhamentos da casa</h3><p>Arroz, feijão tropeiro, maionese, vinagrete e cebola crispy, com reposição cortesia.</p></div></li>
+            <li><b>4</b><div><h3>Escolha sua bebida</h3><p>Grande variedade de bebidas e drinks para acompanhar o churrasco.</p></div></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ QUALIDADE ============ -->
+    <section class="section qualidade" id="qualidade">
+      <div class="qualidade__bg" style="background-image:url('assets/img/costela-fumaca.webp')" data-parallax-bg></div>
+      <div class="qualidade__shade"></div>
+      <canvas class="fx-canvas qualidade__smoke" data-smoke="qualidade"></canvas>
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <p class="kicker"><span class="flame" aria-hidden="true"></span> Qualidade da carne gaúcha</p>
+          <h2 class="title">Da seleção à brasa:<br>qualidade que você sente <em>no primeiro corte</em></h2>
+          <p class="section__lead">Churrasco de verdade começa muito antes do fogo. É escolha do corte, respeito pela tradição e atenção ao ponto certo.</p>
+        </header>
+        <div class="pillars">
+          <article class="pillar" data-reveal style="--i:0">
+            <div class="pillar__icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4 8 10v12c0 10 6.8 18.6 16 22 9.2-3.4 16-12 16-22V10L24 4Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="m16 24 6 6 11-12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span class="pillar__num">01</span>
+            <h3>Seleção rigorosa</h3>
+            <p>Só entram na nossa brasa cortes premium, com qualidade e certificação garantida, incluindo a linha <strong>Prime Black Angus</strong>.</p>
+          </article>
+          <article class="pillar" data-reveal style="--i:1">
+            <div class="pillar__icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 44c8 0 14-5.6 14-13.4 0-6.6-4.4-10.8-7-15.6-1.2 3.4-3 5.4-5 6.4.6-6.6-2.4-12.4-7.6-17.4.4 6.6-3 10.8-6.2 15C9.6 22.6 10 26.8 10 30.6 10 38.4 16 44 24 44Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M24 44c-3.6 0-6-2.6-6-6 0-3.8 3.4-6 4.4-10 2.8 2.4 7.6 6 7.6 10.4 0 3.2-2.4 5.6-6 5.6Z" fill="currentColor" opacity=".35"/></svg></div>
+            <span class="pillar__num">02</span>
+            <h3>Tradição gaúcha</h3>
+            <p>Assados na brasa e no bafo, do jeito que manda o churrasco do Sul. Costela que desmancha, cordeiro dourado, linguiça artesanal.</p>
+          </article>
+          <article class="pillar" data-reveal style="--i:2">
+            <div class="pillar__icon"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="26" r="16" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M24 16v10l7 5M19 4h10M24 4v6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></div>
+            <span class="pillar__num">03</span>
+            <h3>Preparado na hora</h3>
+            <p>Cada prato é preparado no momento do pedido, grelhado em alta temperatura para selar e manter toda a suculência.</p>
+          </article>
+          <article class="pillar" data-reveal style="--i:3">
+            <div class="pillar__icon"><svg viewBox="0 0 48 48" aria-hidden="true"><ellipse cx="24" cy="30" rx="19" ry="8" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M12 27c2-6 7-9 12-9s10 3 12 9M20 12c0-2 2-2 2-4M26 12c0-2 2-2 2-4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></div>
+            <span class="pillar__num">04</span>
+            <h3>Servido com fartura</h3>
+            <p>Arroz biro-biro, feijão tropeiro, maionese artesanal, vinagrete e cebola crispy, com reposição <strong>cortesia da casa</strong>.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CORTES ============ -->
+    <section class="section cortes" id="cortes">
+      <div class="container">
+        <header class="section__head section__head--split" data-reveal>
+          <div>
+            <p class="kicker"><span class="flame" aria-hidden="true"></span> Os protagonistas</p>
+            <h2 class="title">Cortes que fazem a <em>fama da casa</em></h2>
+          </div>
+          <p class="section__lead">Marmoreio, capa de gordura no ponto e o sabor da brasa. Conheça os cortes mais pedidos do Gaúcho Figueiras.</p>
+        </header>
+
+        <div class="cut-grid">
+          <article class="cut" data-reveal style="--i:0">
+            <div class="cut__img"><img src="assets/img/picanha-fatiada.webp" alt="Picanha fatiada" loading="lazy" width="800" height="1067"><span class="cut__smoke" aria-hidden="true"></span></div>
+            <div class="cut__body">
+              <span class="tag">Black Angus · Prime</span>
+              <h3>Picanha Prime</h3>
+              <p>A rainha do churrasco. A capa de gordura derrete na brasa e deixa a carne suculenta e cheia de sabor.</p>
+              <p class="cut__price"><small>2 pessoas</small> R$ 219,90</p>
+            </div>
+          </article>
+          <article class="cut" data-reveal style="--i:1">
+            <div class="cut__img"><img src="assets/img/bife-ancho-cru.webp" alt="Bife ancho com marmoreio" loading="lazy" width="800" height="800"><span class="cut__smoke" aria-hidden="true"></span></div>
+            <div class="cut__body">
+              <span class="tag">Black Angus · Prime</span>
+              <h3>Bife Ancho Prime</h3>
+              <p>O miolo do contrafilé, com marmoreio intenso. Macio, suculento e de sabor marcante.</p>
+              <p class="cut__price"><small>2 pessoas</small> R$ 199,90</p>
+            </div>
+          </article>
+          <article class="cut" data-reveal style="--i:2">
+            <div class="cut__img"><img src="assets/img/chorizo-grelhado.webp" alt="Chorizo grelhado na brasa" loading="lazy" width="800" height="800"><span class="cut__smoke" aria-hidden="true"></span></div>
+            <div class="cut__body">
+              <span class="tag">Black Angus · Prime</span>
+              <h3>Chorizo Argentino</h3>
+              <p>Clássico das parrillas: alto, firme e suculento, com a borda de gordura que dá todo o sabor.</p>
+              <p class="cut__price"><small>2 pessoas</small> R$ 199,90</p>
+            </div>
+          </article>
+          <article class="cut" data-reveal style="--i:3">
+            <div class="cut__img"><img src="assets/img/costela-bovina.webp" alt="Costela bovina assada no bafo" loading="lazy" width="800" height="1067"><span class="cut__smoke" aria-hidden="true"></span></div>
+            <div class="cut__body">
+              <span class="tag">Assado no bafo</span>
+              <h3>Costela Bovina</h3>
+              <p>Assada lentamente no bafo até desmanchar no garfo. Tradição gaúcha em estado puro.</p>
+              <p class="cut__price"><small>2 pessoas</small> R$ 159,90</p>
+            </div>
+          </article>
+          <article class="cut" data-reveal style="--i:4">
+            <div class="cut__img"><img src="assets/img/carre-cordeiro.webp" alt="Carré de cordeiro na brasa" loading="lazy" width="800" height="800"><span class="cut__smoke" aria-hidden="true"></span></div>
+            <div class="cut__body">
+              <span class="tag">Assados gaúchos</span>
+              <h3>Carré de Cordeiro</h3>
+              <p>Costeletas de cordeiro douradas na brasa: delicadas, aromáticas e irresistíveis.</p>
+              <p class="cut__price"><small>2 pessoas</small> R$ 210,90</p>
+            </div>
+          </article>
+          <article class="cut" data-reveal style="--i:5">
+            <div class="cut__img"><img src="assets/img/costelinha-pururuca.webp" alt="Torresmo de rolo pururuca" loading="lazy" width="800" height="1067"><span class="cut__smoke" aria-hidden="true"></span></div>
+            <div class="cut__body">
+              <span class="tag">Porção · 500 g</span>
+              <h3>Torresmo de Rolo Pururuca</h3>
+              <p>Torresmo artesanal enrolado, assado e pururucado na hora. Acompanha mandioca frita e vinagrete.</p>
+              <p class="cut__price"><small>porção</small> R$ 89,90</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PONTO DA CARNE ============ -->
+    <section class="section ponto" id="ponto">
+      <div class="container ponto__grid">
+        <div class="ponto__visual" data-reveal="left">
+          <svg class="ponto__svg" viewBox="0 0 520 300" role="img" aria-labelledby="pontoSvgTitle">
+            <title id="pontoSvgTitle">Corte transversal de um bife mostrando o ponto da carne</title>
+            <defs>
+              <linearGradient id="gDone" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#2a0e05"/>
+                <stop offset=".045" stop-color="#5a2814"/>
+                <stop data-k="band1" offset=".07" stop-color="#8a6250"/>
+                <stop data-k="edge1" offset=".13" stop-color="#c97a6f"/>
+                <stop data-k="mid1" offset=".3" stop-color="#d4555c"/>
+                <stop data-k="core" offset=".5" stop-color="#c42f3c"/>
+                <stop data-k="mid2" offset=".7" stop-color="#d4555c"/>
+                <stop data-k="edge2" offset=".87" stop-color="#c97a6f"/>
+                <stop data-k="band2" offset=".93" stop-color="#8a6250"/>
+                <stop offset=".955" stop-color="#5a2814"/>
+                <stop offset="1" stop-color="#2a0e05"/>
+              </linearGradient>
+              <linearGradient id="gEnds" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#2a0e05"/>
+                <stop offset=".035" stop-color="#5a2814" stop-opacity=".85"/>
+                <stop offset=".08" stop-color="#5a2814" stop-opacity="0"/>
+                <stop offset=".92" stop-color="#5a2814" stop-opacity="0"/>
+                <stop offset=".965" stop-color="#5a2814" stop-opacity=".85"/>
+                <stop offset="1" stop-color="#2a0e05"/>
+              </linearGradient>
+              <linearGradient id="gCap" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#8a4a1e"/>
+                <stop offset=".35" stop-color="#e2b06c"/>
+                <stop offset="1" stop-color="#f6e2b8"/>
+              </linearGradient>
+              <filter id="fGrain" x="0" y="0" width="100%" height="100%">
+                <feTurbulence type="fractalNoise" baseFrequency=".02 .5" numOctaves="2" seed="8"/>
+                <feColorMatrix values="0 0 0 0 .2  0 0 0 0 .02  0 0 0 0 .02  0 0 0 1.1 -.45"/>
+              </filter>
+              <clipPath id="clipSlice"><path d="M70 92 C120 78 200 74 270 76 C350 78 420 72 460 86 C478 92 484 108 482 130 L478 196 C476 220 460 230 430 232 C350 238 260 232 180 236 C130 238 88 236 72 222 C60 210 58 190 60 168 L62 116 C63 102 66 95 70 92 Z"/></clipPath>
+            </defs>
+            <ellipse cx="270" cy="262" rx="230" ry="16" fill="#000" opacity=".5"/>
+            <g clip-path="url(#clipSlice)">
+              <rect x="50" y="70" width="440" height="172" fill="url(#gDone)"/>
+              <rect x="50" y="70" width="440" height="172" filter="url(#fGrain)" opacity=".5"/>
+              <rect x="50" y="70" width="440" height="172" fill="url(#gEnds)"/>
+              <path d="M50 60 L490 60 L490 100 C440 96 360 98 270 98 C190 96 120 100 50 108 Z" fill="url(#gCap)"/>
+              <g class="ponto__juice">
+                <ellipse cx="190" cy="150" rx="46" ry="6" fill="#fff" opacity=".16"/>
+                <ellipse cx="330" cy="185" rx="30" ry="4" fill="#fff" opacity=".1"/>
+              </g>
+            </g>
+          </svg>
+          <div class="ponto__temp"><span id="pontoTemp">≈ 55 °C</span><small>no centro</small></div>
+        </div>
+        <div class="ponto__text">
+          <p class="kicker" data-reveal><span class="flame" aria-hidden="true"></span> Do seu jeito</p>
+          <h2 class="title" data-reveal>Qual é o <em>seu ponto</em>?</h2>
+          <p data-reveal>Cada corte é preparado na hora, do jeito que você pedir. Arraste e descubra a diferença entre os pontos da carne.</p>
+          <div class="ponto__control" data-reveal>
+            <input type="range" id="pontoRange" min="0" max="4" step="1" value="1" aria-label="Ponto da carne" aria-valuetext="Ao ponto para mal">
+            <div class="ponto__labels" aria-hidden="true">
+              <span>Mal</span><span>Ao ponto p/ mal</span><span>Ao ponto</span><span>Ao ponto p/ bem</span><span>Bem</span>
+            </div>
+          </div>
+          <div class="ponto__card" data-reveal aria-live="polite">
+            <h3 id="pontoName">Ao ponto para mal</h3>
+            <p id="pontoDesc">Centro rosado-avermelhado e muito suculento. O ponto preferido de quem ama cortes nobres como picanha e ancho.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CARDÁPIO ============ -->
+    <section class="section cardapio" id="cardapio">
+      <canvas class="fx-canvas cardapio__embers" data-embers="cardapio"></canvas>
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <p class="kicker"><span class="flame" aria-hidden="true"></span> Cardápio</p>
+          <h2 class="title">Escolha o seu <em>assado</em></h2>
+          <p class="section__lead">Pratos para 2 ou 4 pessoas, servidos com os acompanhamentos da casa. Preços do cardápio vigente, sujeitos a alteração.</p>
+        </header>
+
+        <div class="tabs" role="tablist" aria-label="Categorias do cardápio" data-reveal>
+          <button role="tab" aria-selected="true" aria-controls="tab-prime" id="t-prime">Prime Black Angus</button>
+          <button role="tab" aria-selected="false" aria-controls="tab-brasa" id="t-brasa" tabindex="-1">Assados na brasa</button>
+          <button role="tab" aria-selected="false" aria-controls="tab-bafo" id="t-bafo" tabindex="-1">No bafo</button>
+          <button role="tab" aria-selected="false" aria-controls="tab-mistos" id="t-mistos" tabindex="-1">Assados mistos</button>
+          <button role="tab" aria-selected="false" aria-controls="tab-aves" id="t-aves" tabindex="-1">Aves, suínos &amp; parmegiana</button>
+          <button role="tab" aria-selected="false" aria-controls="tab-individuais" id="t-individuais" tabindex="-1">Individuais &amp; kids</button>
+          <button role="tab" aria-selected="false" aria-controls="tab-entradas" id="t-entradas" tabindex="-1">Entradas &amp; porções</button>
+        </div>
+
+        <div class="menu-panels">
+          <!-- PRIME -->
+          <div class="menu-panel is-active" role="tabpanel" id="tab-prime" aria-labelledby="t-prime">
+            <p class="menu-note">Acompanham arroz biro-biro, feijão tropeiro, maionese, vinagrete e cebola crispy.</p>
+            <div class="menu-cols"><span></span><span>2 pessoas</span><span>4 pessoas</span></div>
+            <ul class="menu-list">
+              <li><div><h4>Bife Ancho Prime</h4><p>Black Angus, marmoreio intenso</p></div><b>R$ 199,90</b><b>R$ 389,90</b></li>
+              <li><div><h4>Picanha Prime</h4><p>Black Angus, a rainha do churrasco</p></div><b>R$ 219,90</b><b>R$ 409,90</b></li>
+              <li><div><h4>Chorizo Argentino Prime</h4><p>Black Angus, alto e suculento</p></div><b>R$ 199,90</b><b>R$ 389,90</b></li>
+              <li><div><h4>Parrilhada</h4><p>Seleção de cortes na parrilla</p></div><b>R$ 219,90</b><b>R$ 409,90</b></li>
+            </ul>
+          </div>
+          <!-- BRASA -->
+          <div class="menu-panel" role="tabpanel" id="tab-brasa" aria-labelledby="t-brasa" hidden>
+            <p class="menu-note">Acompanham arroz, feijão tropeiro, maionese e vinagrete.</p>
+            <div class="menu-cols"><span></span><span>2 pessoas</span><span>4 pessoas</span></div>
+            <ul class="menu-list">
+              <li><div><h4>Carré de Cordeiro</h4></div><b>R$ 210,90</b><b>R$ 399,90</b></li>
+              <li><div><h4>Entranha</h4></div><b>R$ 199,90</b><b>R$ 329,90</b></li>
+              <li><div><h4>Bife de Tira</h4></div><b>R$ 189,90</b><b>R$ 309,90</b></li>
+              <li><div><h4>Assado de Tira</h4></div><b>R$ 199,90</b><b>R$ 329,90</b></li>
+              <li><div><h4>Picanha Argentina</h4></div><b>R$ 199,90</b><b>R$ 329,90</b></li>
+              <li><div><h4>Filé Mignon</h4></div><b>R$ 179,90</b><b>R$ 299,90</b></li>
+              <li><div><h4>Bife Ancho</h4></div><b>R$ 179,90</b><b>R$ 309,90</b></li>
+              <li><div><h4>Chorizo Argentino</h4></div><b>R$ 189,90</b><b>R$ 319,90</b></li>
+              <li><div><h4>Baby Beef</h4></div><b>R$ 189,90</b><b>R$ 319,90</b></li>
+              <li><div><h4>Bombom de Alcatra</h4></div><b>R$ 199,90</b><b>R$ 329,90</b></li>
+              <li><div><h4>Maminha</h4></div><b>R$ 179,90</b><b>R$ 299,90</b></li>
+              <li><div><h4>Fraldinha</h4></div><b>R$ 179,90</b><b>R$ 299,90</b></li>
+              <li><div><h4>Salmão Grelhado</h4><p>Acompanha arroz, legumes, batata sauté e vinagrete</p></div><b>R$ 189,90</b><b>R$ 349,90</b></li>
+            </ul>
+          </div>
+          <!-- BAFO -->
+          <div class="menu-panel" role="tabpanel" id="tab-bafo" aria-labelledby="t-bafo" hidden>
+            <p class="menu-note">Acompanham arroz, feijão tropeiro, maionese, vinagrete, cebola crispy e farofa.</p>
+            <div class="menu-cols"><span></span><span>2 pessoas</span><span>4 pessoas</span></div>
+            <ul class="menu-list">
+              <li><div><h4>Costelinha Suína ao Barbecue</h4></div><b>R$ 149,90</b><b>R$ 219,90</b></li>
+              <li><div><h4>Costela Bovina Tradicional</h4></div><b>R$ 159,90</b><b>R$ 249,90</b></li>
+              <li><div><h4>Cupim Bovino</h4></div><b>R$ 159,90</b><b>R$ 249,90</b></li>
+              <li class="menu-list__wide"><div><h4>Joelho de Porco Defumado <span class="tag tag--sm">Especial</span></h4><p>Serve até 3 pessoas</p></div><b>R$ 149,90</b></li>
+            </ul>
+          </div>
+          <!-- MISTOS -->
+          <div class="menu-panel" role="tabpanel" id="tab-mistos" aria-labelledby="t-mistos" hidden>
+            <p class="menu-note">Acompanham arroz, feijão tropeiro, maionese, vinagrete, cebola crispy e farofa.</p>
+            <div class="menu-cols"><span></span><span>2 pessoas</span><span>4 pessoas</span></div>
+            <ul class="menu-list">
+              <li><div><h4>Misto Laçador</h4><p>Filé mignon, sobrecoxa desossada e linguiça</p></div><b>R$ 189,90</b><b>R$ 299,90</b></li>
+              <li><div><h4>Misto Missões</h4><p>Chorizo Angus, linguiça e picanha suína</p></div><b>R$ 189,90</b><b>R$ 299,90</b></li>
+              <li><div><h4>Misto Campanha</h4><p>Baby beef, linguiça e cupim</p></div><b>R$ 189,90</b><b>R$ 299,90</b></li>
+              <li><div><h4>Misto dos Pampas</h4><p>Baby beef, costela suína e linguiça</p></div><b>R$ 189,90</b><b>R$ 299,90</b></li>
+              <li><div><h4>Misto Gaúcho</h4><p>Picanha, costela bovina e linguiça</p></div><b>R$ 179,90</b><b>R$ 309,90</b></li>
+              <li><div><h4>Misto da Casa</h4><p>Filé mignon, cupim e costela</p></div><b>R$ 179,90</b><b>R$ 309,90</b></li>
+            </ul>
+          </div>
+          <!-- AVES / SUÍNOS / PARMEGIANA -->
+          <div class="menu-panel" role="tabpanel" id="tab-aves" aria-labelledby="t-aves" hidden>
+            <p class="menu-note">Aves e suínos acompanham arroz soltinho, feijão tropeiro da casa, maionese artesanal, vinagrete fresco, cebola crispy e farofa crocante.</p>
+            <div class="menu-cols"><span></span><span>2 pessoas</span><span>4 pessoas</span></div>
+            <ul class="menu-list">
+              <li><div><h4>Filé de Coxa Desossada</h4></div><b>R$ 129,90</b><b>R$ 179,90</b></li>
+              <li><div><h4>Filé de Frango Grill</h4></div><b>R$ 129,90</b><b>R$ 179,90</b></li>
+              <li><div><h4>Picanha Suína Premium</h4></div><b>R$ 129,90</b><b>R$ 179,90</b></li>
+              <li><div><h4>Medalhão Suíno</h4><p>Ao molho de vinho branco</p></div><b>R$ 159,90</b><b>R$ 229,90</b></li>
+              <li><div><h4>Filé Mignon Suíno</h4><p>Ao molho de maracujá</p></div><b>R$ 159,90</b><b>R$ 229,90</b></li>
+            </ul>
+            <h3 class="menu-sub">À parmegiana</h3>
+            <p class="menu-note">Acompanha arroz, salada verde e batatas fritas crocantes.</p>
+            <ul class="menu-list">
+              <li><div><h4>Filé Mignon à Parmegiana</h4></div><b>R$ 179,90</b><b>R$ 279,90</b></li>
+              <li><div><h4>Frango à Parmegiana</h4></div><b>R$ 159,90</b><b>R$ 259,90</b></li>
+            </ul>
+          </div>
+          <!-- INDIVIDUAIS -->
+          <div class="menu-panel" role="tabpanel" id="tab-individuais" aria-labelledby="t-individuais" hidden>
+            <p class="menu-note">Pratos individuais incluem 1 reposição gratuita de arroz, feijão tropeiro, maionese, vinagrete e cebola crispy.</p>
+            <ul class="menu-list menu-list--single">
+              <li><div><h4>Sobrecoxa Desossada</h4></div><b>R$ 49,90</b></li>
+              <li><div><h4>Contrafilé</h4></div><b>R$ 59,90</b></li>
+              <li><div><h4>Medalhão Suíno</h4><p>Ao molho de vinho branco</p></div><b>R$ 79,90</b></li>
+              <li><div><h4>Filé Mignon Suíno</h4><p>Ao molho de maracujá</p></div><b>R$ 79,90</b></li>
+              <li><div><h4>Bife Ancho Argentino</h4></div><b>R$ 89,90</b></li>
+              <li><div><h4>Picanha Argentina</h4></div><b>R$ 89,90</b></li>
+              <li><div><h4>Filé Mignon</h4></div><b>R$ 89,90</b></li>
+              <li><div><h4>Cupim Bovino</h4></div><b>R$ 89,90</b></li>
+              <li><div><h4>Costela Bovina</h4></div><b>R$ 89,90</b></li>
+              <li><div><h4>Salmão Grelhado</h4></div><b>R$ 89,90</b></li>
+              <li><div><h4>Ancho Angus Black</h4></div><b>R$ 99,90</b></li>
+              <li><div><h4>Chorizo Angus Black</h4></div><b>R$ 99,90</b></li>
+            </ul>
+            <h3 class="menu-sub">Pratos kids</h3>
+            <ul class="menu-list menu-list--single">
+              <li><div><h4>Strogonoff Piá</h4><p>Cubinhos de frango super macios ao molho cremoso com champignon, arroz soltinho e muita batata palha crocante</p></div><b>R$ 49,90</b></li>
+            </ul>
+          </div>
+          <!-- ENTRADAS -->
+          <div class="menu-panel" role="tabpanel" id="tab-entradas" aria-labelledby="t-entradas" hidden>
+            <h3 class="menu-sub menu-sub--first">Entradas da brasa</h3>
+            <ul class="menu-list menu-list--single">
+              <li><div><h4>Linguiça Toscana <small>6 un.</small></h4><p>Assadas na brasa até ficarem suculentas. Acompanha farofa caseira e vinagrete bem temperado.</p></div><b>R$ 48,90</b></li>
+              <li><div><h4>Coração de Frango <small>600 g</small></h4><p>Marinados em tempero especial e assados no ponto certo. Acompanha farofa crocante e vinagrete.</p></div><b>R$ 79,90</b></li>
+              <li><div><h4>Linguiça Artesanal <small>800 g</small></h4><p>Receita exclusiva, dourada por fora e macia por dentro. Acompanha farofa e vinagrete fresquinho.</p></div><b>R$ 85,90</b></li>
+              <li><div><h4>Contrafilé Aperitivo <small>600 g</small></h4><p>Tiras macias grelhadas em alta temperatura para manter a suculência. Com farofa, vinagrete e batatas fritas.</p></div><b>R$ 95,90</b></li>
+              <li><div><h4>Picanha Aperitivo <small>600 g</small></h4><p>Picanha nobre em tiras, grelhada na brasa no ponto ideal. Com farofa caseira, vinagrete e batatas fritas.</p></div><b>R$ 159,90</b></li>
+              <li><div><h4>Tábua Mista Premium Grill <small>800 g</small></h4><p>Cortes nobres bovinos, filé de frango e linguiça toscana artesanal. Com farofa crocante e vinagrete da casa.</p></div><b>R$ 128,90</b></li>
+              <li><div><h4>Torresmo de Rolo Pururuca <small>500 g</small></h4><p>Artesanal, enrolado, assado e pururucado na hora. Com mandioca frita e vinagrete.</p></div><b>R$ 89,90</b></li>
+              <li><div><h4>Tulipinhas Grelhadas ao Toque do Chef <small>600 g</small></h4><p>Meio da asa dourado na grelha, marinado em ervas finas. Com molho especial da casa.</p></div><b>R$ 98,90</b></li>
+            </ul>
+            <h3 class="menu-sub">Porções</h3>
+            <div class="menu-cols"><span></span><span>2 pessoas</span><span>4 pessoas</span></div>
+            <ul class="menu-list">
+              <li><div><h4>Bruschetta Italiana Tradicional</h4><p>2 un. / 4 un.</p></div><b>R$ 18,90</b><b>R$ 36,90</b></li>
+              <li><div><h4>Mini Pastéis Artesanais</h4><p>Carne ou queijo · 6 un. / 12 un.</p></div><b>R$ 24,90</b><b>R$ 39,90</b></li>
+              <li><div><h4>Batata Frita Extra Crocante</h4></div><b>R$ 32,90</b><b>R$ 44,90</b></li>
+              <li><div><h4>Mandioca Cremosa Crocante</h4></div><b>R$ 34,90</b><b>R$ 46,90</b></li>
+              <li><div><h4>Onion Rings Crocantes</h4></div><b>R$ 34,90</b><b>R$ 46,90</b></li>
+              <li><div><h4>Polenta Crocante com Parmesão</h4></div><b>R$ 34,90</b><b>R$ 46,90</b></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cardapio__footer" data-reveal>
+          <div class="cortesia">
+            <span class="cortesia__icon" aria-hidden="true">★</span>
+            <p><strong>Cortesia da casa:</strong> pratos individuais ou para 2 e 4 pessoas incluem 1 reposição gratuita de arroz, feijão tropeiro, maionese, vinagrete e cebola crispy.</p>
+          </div>
+          <a class="btn btn--ghost" href="assets/cardapio-gaucho-figueiras.pdf" target="_blank" rel="noopener" download>
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m0 0-4.5-4.5M12 14l4.5-4.5M4 17v3h16v-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Cardápio completo (PDF) com saladas, sobremesas e bebidas
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ AVALIAÇÕES ============ -->
+    <section class="section avaliacoes" id="avaliacoes">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <p class="kicker"><span class="flame" aria-hidden="true"></span> Avaliações</p>
+          <h2 class="title">Quem prova, <em>recomenda</em></h2>
+          <p class="section__lead">Milhares de clientes já avaliaram nosso churrasco. A nota alta vem de uma coisa só: carne de qualidade, bem servida.</p>
+        </header>
+
+        <div class="ratings">
+          <article class="rating" data-reveal style="--i:0">
+            <div class="rating__brand">
+              <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.4-.4-3.5Z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7Z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2A12 12 0 0 1 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44Z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3a12 12 0 0 1-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5Z"/></svg>
+              <span>Google</span>
+            </div>
+            <p class="rating__score"><strong data-count="4.6" data-decimals="1">4,6</strong><span>/5</span></p>
+            <span class="stars stars--lg" style="--rate:4.6" aria-label="4,6 de 5 estrelas"></span>
+            <p class="rating__count">+1.100 avaliações no Google</p>
+          </article>
+          <article class="rating rating--featured" data-reveal style="--i:1">
+            <div class="rating__brand">
+              <svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#EA1D2C"/><text x="24" y="31" text-anchor="middle" font-family="Manrope, Arial, sans-serif" font-weight="800" font-size="15" fill="#fff">iFood</text></svg>
+              <span>iFood · Delivery</span>
+            </div>
+            <p class="rating__score"><strong data-count="4.9" data-decimals="1">4,9</strong><span>/5</span></p>
+            <span class="stars stars--lg" style="--rate:4.9" aria-label="4,9 de 5 estrelas"></span>
+            <p class="rating__count">+1.100 avaliações no iFood</p>
+          </article>
+          <article class="rating" data-reveal style="--i:2">
+            <div class="rating__brand">
+              <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#2a2320" stroke="#f2b632" stroke-width="2"/><path d="M15 31V17h8.5a4.5 4.5 0 0 1 0 9H15m8 0 6 5" fill="none" stroke="#f2b632" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 17h4v14" fill="none" stroke="#f2b632" stroke-width="3" stroke-linecap="round"/></svg>
+              <span>Restaurant Guru</span>
+            </div>
+            <p class="rating__score"><strong data-count="4.8" data-decimals="1">4,8</strong><span>/5</span></p>
+            <span class="stars stars--lg" style="--rate:4.8" aria-label="4,8 de 5 estrelas"></span>
+            <p class="rating__count">+1.200 avaliações de visitantes</p>
+          </article>
+        </div>
+
+        <div class="loved" data-reveal>
+          <h3>Os mais elogiados pelos clientes</h3>
+          <ul>
+            <li><span aria-hidden="true">🔥</span> Picanha Argentina</li>
+            <li><span aria-hidden="true">🔥</span> Bife Ancho</li>
+            <li><span aria-hidden="true">🔥</span> Bife de Chorizo</li>
+            <li><span aria-hidden="true">🤝</span> Atendimento atencioso</li>
+            <li><span aria-hidden="true">💰</span> Preço justo</li>
+          </ul>
+        </div>
+
+        <!-- Depoimentos reais: preenchidos a partir de assets/js/reviews.js (fica oculto enquanto a lista estiver vazia) -->
+        <div class="reviews" id="reviews" hidden>
+          <div class="reviews__track" id="reviewsTrack"></div>
+          <div class="reviews__nav">
+            <button type="button" class="reviews__btn" data-dir="-1" aria-label="Avaliação anterior">←</button>
+            <div class="reviews__dots" id="reviewsDots"></div>
+            <button type="button" class="reviews__btn" data-dir="1" aria-label="Próxima avaliação">→</button>
+          </div>
+        </div>
+
+        <div class="avaliacoes__ctas" data-reveal>
+          <a class="btn btn--fire" href="https://www.google.com/maps/search/?api=1&amp;query=Ga%C3%BAcho+Figueiras+Grill+Rua+das+Figueiras+1408+Santo+Andr%C3%A9" target="_blank" rel="noopener">Ler avaliações no Google</a>
+          <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Ga%C3%BAcho+Figueiras+Grill+Rua+das+Figueiras+1408+Santo+Andr%C3%A9" target="_blank" rel="noopener">Já veio? Deixe sua avaliação ★</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GALERIA ============ -->
+    <section class="section galeria" id="galeria">
+      <div class="container">
+        <header class="section__head section__head--split" data-reveal>
+          <div>
+            <p class="kicker"><span class="flame" aria-hidden="true"></span> Galeria</p>
+            <h2 class="title">Direto da <em>nossa brasa</em></h2>
+          </div>
+          <p class="section__lead">Uma prévia do que chega à sua mesa. Siga <a href="https://www.instagram.com/gauchofigueiras" target="_blank" rel="noopener">@gauchofigueiras</a> e acompanhe as novidades.</p>
+        </header>
+        <div class="gallery">
+          <a href="assets/img/banquete-gaucho.webp" class="gallery__item gallery__item--wide" data-reveal><img src="assets/img/banquete-gaucho.webp" alt="Banquete gaúcho com costela e acompanhamentos" loading="lazy" width="800" height="450"></a>
+          <a href="assets/img/espetos-na-mesa.webp" class="gallery__item gallery__item--tall" data-reveal><img src="assets/img/espetos-na-mesa.webp" alt="Espetos de carne servidos na mesa" loading="lazy" width="800" height="1421"></a>
+          <a href="assets/img/costela-bovina.webp" class="gallery__item" data-reveal><img src="assets/img/costela-bovina.webp" alt="Costela bovina assada" loading="lazy" width="800" height="1067"></a>
+          <a href="assets/img/mesa-completa.webp" class="gallery__item" data-reveal><img src="assets/img/mesa-completa.webp" alt="Mesa completa com carnes e acompanhamentos" loading="lazy" width="800" height="1067"></a>
+          <a href="assets/img/corte-picanha.webp" class="gallery__item gallery__item--wide" data-reveal><img src="assets/img/corte-picanha.webp" alt="Carne sendo fatiada na tábua" loading="lazy" width="1920" height="1280"></a>
+          <a href="assets/img/carre-cordeiro.webp" class="gallery__item" data-reveal><img src="assets/img/carre-cordeiro.webp" alt="Carré de cordeiro" loading="lazy" width="800" height="800"></a>
+          <a href="assets/img/salmao-grelhado.webp" class="gallery__item" data-reveal><img src="assets/img/salmao-grelhado.webp" alt="Salmão grelhado" loading="lazy" width="800" height="800"></a>
+          <a href="assets/img/tabua-fatiada.webp" class="gallery__item" data-reveal><img src="assets/img/tabua-fatiada.webp" alt="Bife fatiado na tábua" loading="lazy" width="1600" height="1067"></a>
+          <a href="assets/img/chorizo-grelhado.webp" class="gallery__item" data-reveal><img src="assets/img/chorizo-grelhado.webp" alt="Bifes grelhados com acompanhamentos" loading="lazy" width="800" height="800"></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DELIVERY ============ -->
+    <section class="delivery">
+      <div class="delivery__bg" style="background-image:url('assets/img/corte-picanha.webp')" data-parallax-bg></div>
+      <div class="delivery__shade"></div>
+      <canvas class="fx-canvas" data-smoke="delivery"></canvas>
+      <div class="container delivery__inner" data-reveal>
+        <div>
+          <p class="kicker"><span class="flame" aria-hidden="true"></span> Delivery</p>
+          <h2 class="title">O churrasco gaúcho <em>vai até você</em></h2>
+          <p>Peça seus cortes favoritos pelo iFood e receba em casa com o mesmo cuidado do salão.</p>
+        </div>
+        <div class="delivery__ctas">
+          <a class="btn btn--ifood btn--lg" href="https://www.ifood.com.br/delivery/santo-andre-sp/churrasco--gaucho-figueiras-grill-campestre/b65d5dc4-5c80-46db-bcf0-cc53820a2d0d" target="_blank" rel="noopener">Pedir no iFood</a>
+          <a class="btn btn--ghost btn--lg" href="tel:+551125344654">Ligar: (11) 2534-4654</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ OUTRAS CASAS ============ -->
+    <section class="section casas">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <p class="kicker"><span class="flame" aria-hidden="true"></span> Nosso grupo</p>
+          <h2 class="title">Conheça também <em>nossas outras casas</em></h2>
+        </header>
+        <div class="casas__list">
+          <figure data-reveal style="--i:0"><img src="assets/img/casa-mallet.webp" alt="Logo Gaúcho Grill Mallet" loading="lazy" width="320" height="320"><figcaption>Gaúcho Grill Mallet</figcaption></figure>
+          <figure data-reveal style="--i:1"><img src="assets/img/casa-marechall.webp" alt="Logo Marechall Pizzaria &amp; Grill" loading="lazy" width="320" height="320"><figcaption>Marechall Pizzaria &amp; Grill</figcaption></figure>
+          <figure data-reveal style="--i:2"><img src="assets/img/casa-espetos.webp" alt="Logo Espetos Japa &amp; Cia" loading="lazy" width="320" height="320"><figcaption>Espetos Japa &amp; Cia</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTATO ============ -->
+    <section class="section contato" id="contato">
+      <div class="container contato__grid">
+        <div class="contato__info">
+          <p class="kicker" data-reveal><span class="flame" aria-hidden="true"></span> Venha nos visitar</p>
+          <h2 class="title" data-reveal>A brasa está <em>acesa</em> todos os dias</h2>
+          <ul class="info-list" data-reveal>
+            <li>
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
+              <div><strong>Rua das Figueiras, 1408</strong><span>Esquina com Alameda São Caetano · B. Jardim, Santo André/SP</span>
+              <a href="https://www.google.com/maps/dir//gaucho+grill+figueiras+ltda/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x94ce4328fa940863:0xca9795fff468040e" target="_blank" rel="noopener">Como chegar →</a></div>
+            </li>
+            <li>
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16Zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7Z"/></svg>
+              <div><strong>Todos os dias, das 11h às 23h</strong><span>Almoço e jantar, de segunda a domingo</span></div>
+            </li>
+            <li>
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8Z"/></svg>
+              <div><strong><a href="tel:+551125344654">(11) 2534-4654</a></strong><span>Telefone e WhatsApp</span></div>
+            </li>
+            <li>
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></svg>
+              <div><strong><a href="mailto:contato@gauchofigueiras.com.br">contato@gauchofigueiras.com.br</a></strong><span>Eventos, reservas para grupos e parcerias</span></div>
+            </li>
+          </ul>
+          <div class="contato__ctas" data-reveal>
+            <a class="btn btn--fire" href="https://wa.me/551125344654?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20fazer%20uma%20reserva." target="_blank" rel="noopener">Reservar pelo WhatsApp</a>
+            <div class="socials">
+              <a href="https://www.instagram.com/gauchofigueiras" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4ZM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4ZM21.9 7.1c-.1-1.6-.4-3-1.6-4.2-1.2-1.2-2.6-1.5-4.2-1.6C14.5 1.2 9.5 1.2 7.9 1.3c-1.6.1-3 .4-4.2 1.6C2.5 4.1 2.2 5.5 2.1 7.1 2 8.7 2 15.3 2.1 16.9c.1 1.6.4 3 1.6 4.2 1.2 1.2 2.6 1.5 4.2 1.6 1.6.1 6.6.1 8.2 0 1.6-.1 3-.4 4.2-1.6 1.2-1.2 1.5-2.6 1.6-4.2.1-1.6.1-8.2 0-9.8Zm-2.1 12a3.3 3.3 0 0 1-1.9 1.9c-1.3.5-4.4.4-5.9.4s-4.6.1-5.9-.4a3.3 3.3 0 0 1-1.9-1.9c-.5-1.3-.4-4.4-.4-5.9s-.1-4.6.4-5.9a3.3 3.3 0 0 1 1.9-1.9c1.3-.5 4.4-.4 5.9-.4s4.6-.1 5.9.4a3.3 3.3 0 0 1 1.9 1.9c.5 1.3.4 4.4.4 5.9s.1 4.6-.4 5.9Z"/></svg></a>
+              <a href="https://www.facebook.com/gauchofigueiras" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12Z"/></svg></a>
+            </div>
+          </div>
+        </div>
+        <div class="contato__map" data-reveal="right">
+          <iframe title="Mapa: Gaúcho Figueiras Grill, Rua das Figueiras 1408, Santo André" src="https://www.google.com/maps?q=Gaucho+Grill+Figueiras,+Rua+das+Figueiras,+1408,+Santo+Andr%C3%A9+-+SP&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <canvas class="fx-canvas" data-embers="footer"></canvas>
+    <div class="container footer__inner">
+      <img src="assets/img/logo.webp" alt="Gaúcho Figueiras Grill" class="footer__logo" loading="lazy" width="640" height="504">
+      <p class="footer__claim">Os cortes mais nobres do ABC.<br>Excelência em churrasco.</p>
+      <nav class="footer__nav" aria-label="Rodapé">
+        <a href="#casa">A Casa</a><a href="#cortes">Cortes</a><a href="#cardapio">Cardápio</a><a href="#avaliacoes">Avaliações</a><a href="#contato">Contato</a>
+      </nav>
+      <p class="footer__legal">© <span id="year">2026</span> Gaúcho Figueiras Grill · Rua das Figueiras, 1408 · Santo André/SP · (11) 2534-4654</p>
+    </div>
+  </footer>
+
+  <!-- WhatsApp flutuante -->
+  <a class="wa-float" href="https://wa.me/551125344654?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20fazer%20uma%20reserva." target="_blank" rel="noopener" aria-label="Fale conosco no WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+  </a>
+
+  <!-- Lightbox da galeria -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button type="button" class="lightbox__close" aria-label="Fechar">×</button>
+    <button type="button" class="lightbox__arrow lightbox__arrow--prev" aria-label="Foto anterior">‹</button>
+    <img alt="">
+    <button type="button" class="lightbox__arrow lightbox__arrow--next" aria-label="Próxima foto">›</button>
+  </div>
+
+  <script src="assets/js/reviews.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
